@@ -1,0 +1,111 @@
+extends template/main
+append vars
+	-
+		page_title= 'Main'
+block content
+	main
+		section.mobile-form
+			.violet-block
+				input(type='checkbox').violet-block-checkbox#vCheck
+				label(for='vCheck').violet-block-label
+					span
+				.violet-block-text
+					span.title Not Answered
+					span.subtitle *Click the radio button to switch the property
+			h2.form-title
+				span Form name
+			.answer-row
+				.row
+					span.yes Yes
+					span.answer Parking lot clean?
+					span.no No
+			.answer-row
+				.row
+					span.yes Yes
+					span.answer Parking lot clean?
+					span.no No
+			.answer-row
+				.row
+					span.yes Yes
+					span.answer Parking lot clean?
+					span.no No
+			.answer-row
+				.row
+					span.yes Yes
+					span.answer Parking lot clean?
+					span.no No
+			.answer-row
+				.row
+					span.yes Yes
+					span.answer Parking lot clean?
+					span.no No
+			.answer-row
+				.row
+					span.yes Yes
+					span.answer Parking lot clean?
+					span.no No
+			.answer-row
+				.row
+					span.yes Yes
+					span.answer Parking lot clean?
+					span.no No
+			.bottom-block
+				button.bottom-input
+					span Section & Category
+				button.bottom-button
+					+img('arrow-top.svg')
+			.advise.popup.active
+				.popup-title.advise-title
+					span Advise
+					button(data-target='advise').close
+						+img('close.svg')
+				.advise-no
+					span Swipe left to answer&nbsp;
+					strong NO
+				.advise-instruction
+					.answer-row
+						.row
+							span.yes Yes
+							span(style='transform:translateX(-92px)').answer Parking lot clean?
+							span.no No
+					.answer-row
+						.row
+							span.yes Yes
+							span(style='transform:translateX(93px)').answer Parking lot clean?
+							span.no No
+				.advise-yes
+					span Swipe right to answer&nbsp;
+					strong YES
+				button(data-target='advise').close.advise-unsubs
+					span Don't show it again
+			.popup.desc
+				.popup-title
+					span Parking lot clean?
+					button(data-target='desc').close
+						+img('close.svg')
+				.desc-text
+					p In this block, you can specify either information in the form of hints about the form, or full-fledged information with form editing.
+			form.popup.tellToUs
+				.popup-title
+					span Tell, why “NO”
+					button(data-target='tellToUs' type='button').close
+						+img('close.svg')
+				textarea(placeholder='Your comment').tellToUs-textarea
+				span.tellToUs-desc *Please, no more than 200 characters
+				.add-photos
+					.add-photos-block
+						button(type='button')
+							+img('plus.svg')
+							span Add a photo
+					.add-photos-block
+						button(type='button')
+							+img('plus.svg')
+							span Add a photo
+					.add-photos-block
+						button(type='button')
+							+img('plus.svg')
+							span Add a photo
+				button.tellToUs-done
+					span Done
+
+

@@ -1,0 +1,227 @@
+.mobile-form
+	max-width: 370px
+	margin: 0 auto
+	padding: 10px 10px 70px
+
+.violet-block
+	padding: 6px 45px 9px
+	background: linear-gradient(90deg, #2D39EB 0%, #E13C84 100%)
+	border-radius: 10px
+	display: flex
+	align-items: center
+	justify-content: space-between
+	&-label
+		+wh(48px,18px)
+		display: flex
+		border-radius: 9px
+		background-color: #F2F2F2
+		box-sizing: content-box
+		span
+			+wh(24px)
+			margin: -3px 2px 0
+			display: block
+			border-radius: 100%
+			background-color: $white
+			border: 1px solid #E4E4E4
+			box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+			transition: .35s ease
+	&-text
+		width: 158px
+		span
+			display: block
+		.title
+			font-family: $f_bold
+			color: $white
+			font-size: 24px
+			line-height: 28px
+		.subtitle
+			font-family: $f_light
+			color: #FEFEFE
+			font-size: 12px
+			line-height: 12px
+#vCheck:checked + .violet-block-label
+	span
+		transform: translateX(20px)
+
+.form
+	&-title
+		margin: 23px 0 20px
+		font-family: $f_bold
+		font-size: 24px
+		line-height: 29px
+		text-align: center
+
+.answer
+	&-row
+		margin-bottom: 16px
+		font-family: $f_bold
+		text-align: center
+		overflow: auto
+		.row
+			display: flex
+			align-items: stretch
+			position: relative
+		.answer
+			flex: 0 0 100%
+			padding: 24px 0
+			background-color: #F3F4FD
+			font-size: 18px
+			box-shadow: 2px 2px 4px rgba(0,0,0,0.08)
+			position: relative
+			z-index: 1
+		.yes,.no
+			height: calc(100% - 2px)
+			display: flex
+			box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.25)
+			align-items: center
+			font-size: 24px
+			color: $white
+			text-transform: uppercase
+			position: absolute
+			top: 1px
+		.yes
+			padding: 0 19px
+			background-color: $green
+			left: 1px
+		.no
+			padding: 0 23px
+			background-color: $red
+			right: 1px
+
+.bottom
+	&-block
+		+dfc
+		padding: 19px 0
+		background: #F2F2F2
+		box-shadow: 0px -6px 8px -6px rgba(24, 39, 75, 0.12), 0px -8px 16px -6px rgba(24, 39, 75, 0.08)
+		border-radius: 4px
+		position: fixed
+		bottom: 0
+		left: 0
+		right: 0
+		z-index: 99
+	&-input,&-button
+		border: 1px solid rgba(151, 151, 151, 0.3)
+		border-radius: 16px
+		background-color: #F4F6F9
+		color: #5B5B5B
+		font-family: $f_bold
+		font-size: 12px
+		text-align: center
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.38)
+		transition: .35s ease
+		&:active
+			box-shadow: none
+	&-input
+		height: 32px
+		margin: 0 10px 0 42px
+		padding: 0 42px
+	&-button
+		+wh(32px)
+		+dfc
+		img
+			display: block
+
+.popup
+	+dfc
+	+wh(100%)
+	padding: 25px 10px
+	flex-direction: column
+	background-color: #F2F2F2
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 100
+	opacity: 0
+	visibility: hidden
+	transition: .35s ease
+	&.active
+		opacity: 1
+		visibility: visible
+	&-title
+		width: 100%
+		margin-bottom: auto
+		padding: 0 25px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		span
+			font-family: $f_bold
+			font-size: 24px
+
+.advise
+	&-instruction
+		width: 100%
+	&-yes,&-no
+		width: 210px
+		font-size: 36px
+		strong
+			font-family: $f_bold
+	&-yes
+		margin: 60px 43px 0 auto
+		text-align: right
+		strong
+			color: $green
+	&-no
+		margin: 0 auto 60px 43px
+		strong
+			color: $red
+	&-unsubs
+		margin-top: auto
+		text-decoration: underline
+
+.desc
+	&-text
+		margin: 0 auto auto
+		width: 304px
+		p
+			font-size: 24px
+
+.tellToUs
+	&-desc
+	&-textarea
+		+wh(305px,168px)
+		padding: 12px 16px
+		border: 1px solid $blue
+		border-radius: 10px
+		resize: none
+		font-family: $f_semi
+		font-size: 12px
+	&-desc
+		width: 305px
+		margin-top: 8px
+		display: block
+		text-align: right
+		color: #5B5B5B
+	&-done
+		margin-bottom: auto
+		margin-top: 60px
+		padding: 9px 55px
+		border-radius: 20px
+		font-family: $f_bold
+		color: #5B5B5B
+		border: 1px solid rgba(151, 151, 151, 0.3)
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.38)
+		transition: .35s ease
+		&:active
+			box-shadow: none
+
+.add
+	&-photos
+		width: 305px
+		margin-top: 40px
+		display: flex
+		justify-content: space-between
+		&-block
+			+wh(100px)
+			background-color: #C4C4C4
+			button
+				+wh(100%)
+				+dfc
+				flex-direction: column
+				span
+					margin-top: 15px
+					font-family: $f_bold
+					color: #EAEAEA
