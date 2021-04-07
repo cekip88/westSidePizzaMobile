@@ -17,13 +17,8 @@ block content
 			.answer-row
 				.row
 					span.yes Yes
-					span(data-position='0' data-type='yes/no').answer Parking lot clean?
+					span.answer Parking lot clean?
 					span.no No
-			.answer-row
-				.row
-					span.yes Answer
-					span(data-position='0' data-type='answer/none').answer Parking lot clean?
-					span.no None
 			.bottom-block
 				button.bottom-input
 					span Section & Category
@@ -41,12 +36,12 @@ block content
 					.answer-row
 						.row
 							span.yes Yes
-							span(style='transform:translateX(-92px)').answer Parking lot clean?
+							span(style='transform:translateX(-92px)' data-position='-92').answer Parking lot clean?
 							span.no No
 					.answer-row
 						.row
 							span.yes Yes
-							span(style='transform:translateX(93px)').answer Parking lot clean?
+							span(style='transform:translateX(93px)' data-position='93').answer Parking lot clean?
 							span.no No
 					+img('swipe.svg')
 				.advise-yes
@@ -93,7 +88,7 @@ block content
 				.tellToUs-fail
 					+img('failure.svg')
 					span Failure!
-			form.popup.tellToUs
+			form.popup.tellToUs.active
 				//.fail.success
 				.popup-title.tellToUs-title
 					span Tell, why “NO”
@@ -102,10 +97,10 @@ block content
 				.tellToUs-inner
 					.horizontal
 						.line(data-count='3')
-							.bar(data-position='0')
-						span.line-span.line-span-one 1
-						span.line-span.line-span-two 2
-						span.line-span.line-span-three 3
+							.bar
+						span.line-span 1
+						span.line-span 2
+						span.line-span 3
 					textarea(placeholder='Your comment').tellToUs-textarea
 					span.tellToUs-desc *Please, no more than 200 characters
 					.add-photos
