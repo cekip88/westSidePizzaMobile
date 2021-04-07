@@ -17,47 +17,22 @@ block content
 			.answer-row
 				.row
 					span.yes Yes
-					span.answer Parking lot clean?
+					span(data-position='0' data-type='yes/no').answer Parking lot clean?
 					span.no No
 			.answer-row
 				.row
-					span.yes Yes
-					span.answer Parking lot clean?
-					span.no No
-			.answer-row
-				.row
-					span.yes Yes
-					span.answer Parking lot clean?
-					span.no No
-			.answer-row
-				.row
-					span.yes Yes
-					span.answer Parking lot clean?
-					span.no No
-			.answer-row
-				.row
-					span.yes Yes
-					span.answer Parking lot clean?
-					span.no No
-			.answer-row
-				.row
-					span.yes Yes
-					span.answer Parking lot clean?
-					span.no No
-			.answer-row
-				.row
-					span.yes Yes
-					span.answer Parking lot clean?
-					span.no No
+					span.yes Answer
+					span(data-position='0' data-type='answer/none').answer Parking lot clean?
+					span.no None
 			.bottom-block
 				button.bottom-input
 					span Section & Category
 				button.bottom-button
 					+img('arrow-top.svg')
-			.advise.popup.active
+			.advise.popup
 				.popup-title.advise-title
 					span Advise
-					button(data-target='advise').close
+					button.close
 						+img('close.svg')
 				.advise-no
 					span Swipe left to answer&nbsp;
@@ -73,39 +48,88 @@ block content
 							span.yes Yes
 							span(style='transform:translateX(93px)').answer Parking lot clean?
 							span.no No
+					+img('swipe.svg')
 				.advise-yes
 					span Swipe right to answer&nbsp;
 					strong YES
-				button(data-target='advise').close.advise-unsubs
+				button.close.advise-unsubs
 					span Don't show it again
 			.popup.desc
 				.popup-title
 					span Parking lot clean?
-					button(data-target='desc').close
+					button.close
 						+img('close.svg')
 				.desc-text
 					p In this block, you can specify either information in the form of hints about the form, or full-fledged information with form editing.
 			form.popup.tellToUs
-				.popup-title
+				.popup-title.tellToUs-title
 					span Tell, why “NO”
-					button(data-target='tellToUs' type='button').close
+					button(type='button').close
 						+img('close.svg')
-				textarea(placeholder='Your comment').tellToUs-textarea
-				span.tellToUs-desc *Please, no more than 200 characters
-				.add-photos
-					.add-photos-block
-						button(type='button')
-							+img('plus.svg')
-							span Add a photo
-					.add-photos-block
-						button(type='button')
-							+img('plus.svg')
-							span Add a photo
-					.add-photos-block
-						button(type='button')
-							+img('plus.svg')
-							span Add a photo
-				button.tellToUs-done
-					span Done
-
+				.tellToUs-inner
+					textarea(placeholder='Your comment').tellToUs-textarea
+					span.tellToUs-desc *Please, no more than 200 characters
+					.add-photos
+						.add-photos-block
+							input(type="file" accept="image/*")
+							.button
+								+img('plus.svg')
+								span Add a photo
+						.add-photos-block
+							input(type="file" accept="image/*")
+							.button
+								+img('plus.svg')
+								span Add a photo
+						.add-photos-block
+							input(type="file" accept="image/*")
+							.button
+								+img('plus.svg')
+								span Add a photo
+					button.tellToUs-done
+						span Done
+				.tellToUs-success
+					+img('success.svg')
+					span Success!
+				.tellToUs-fail
+					+img('failure.svg')
+					span Failure!
+			form.popup.tellToUs
+				//.fail.success
+				.popup-title.tellToUs-title
+					span Tell, why “NO”
+					button(type='button').close
+						+img('close.svg')
+				.tellToUs-inner
+					.horizontal
+						.line(data-count='3')
+							.bar(data-position='0')
+						span.line-span.line-span-one 1
+						span.line-span.line-span-two 2
+						span.line-span.line-span-three 3
+					textarea(placeholder='Your comment').tellToUs-textarea
+					span.tellToUs-desc *Please, no more than 200 characters
+					.add-photos
+						.add-photos-block
+							input(type="file" accept="image/*")
+							.button
+								+img('plus.svg')
+								span Add a photo
+						.add-photos-block
+							input(type="file" accept="image/*")
+							.button
+								+img('plus.svg')
+								span Add a photo
+						.add-photos-block
+							input(type="file" accept="image/*")
+							.button
+								+img('plus.svg')
+								span Add a photo
+					button.tellToUs-done
+						span Done
+				.tellToUs-success
+					+img('success.svg')
+					span Success!
+				.tellToUs-fail
+					+img('failure.svg')
+					span Failure!
 
