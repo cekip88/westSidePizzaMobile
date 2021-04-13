@@ -278,14 +278,22 @@
 				left: 0
 				right: 0
 				opacity: 0
+				&.inactive
+					visibility: hidden
 			.button
 				+wh(100%)
 				+dfc
 				flex-direction: column
+				&,img
+					transition: .35s ease
 				span
 					margin-top: 15px
 					font-family: $f_bold
 					color: #EAEAEA
+				&.active
+					background-color: #41c341
+					img
+						transform: rotate(45deg)
 .horizontal
 	width: 305px
 	margin-bottom: 40px

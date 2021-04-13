@@ -19,6 +19,11 @@ block content
 					span.yes Yes
 					span.answer Parking lot clean?
 					span.no No
+			.answer-row
+				.row
+					span.yes Answer
+					span.answer Parking lot clean?
+					span.no None
 			.bottom-block
 				button.bottom-input
 					span Section & Category
@@ -107,7 +112,8 @@ block content
 						.add-photos-block
 							input(type="file" accept="image/*")
 							.button
-								+img('plus.svg')
+								button(type='button')
+									+img('plus.svg')
 								span Add a photo
 						.add-photos-block
 							input(type="file" accept="image/*")

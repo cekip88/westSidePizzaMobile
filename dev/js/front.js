@@ -7,11 +7,8 @@ class Front extends _front{
     _.swipeAnswer();
     _.swipeScrollBar();
     _.popupsCloseBtn();
-    MainEventBus.add(_.componentName,'createOrderSuccess',_.createOrderSuccess.bind(_));
-    MainEventBus.add(_.componentName,'createOrderFail',_.createOrderFail.bind(_));
+    _.addPhotoInputsHandlers();
   }
-  createOrderSuccess(orderData){}
-  createOrderFail(orderData){}
 
   swipeScrollBar(){
     const _ = this;
@@ -133,6 +130,41 @@ class Front extends _front{
 
     item.setAttribute('data-position',currentItemPosition);
     item.style.transform = `translateX(${currentItemPosition}px)`
+  }
+
+  addPhotoInputsHandlers(){
+    const _ = this;
+    let inputs = document.querySelectorAll('.add-photos-block input[type="file"]');
+    if (inputs.length) {
+      for (let inpt of inputs) {
+        inpt.addEventListener('change',function (){
+          _.addPhoto(inpt);
+        });
+        let btn = inpt.nextElementSibling.firstElementChild;
+        btn.addEventListener('click',function (e){
+          e.preventDefault();
+          _.removePhoto(btn,inpt);
+        })
+      }
+    }
+  }
+  addPhoto(input){
+    let btn = input.nextElementSibling;
+    let filePath = input.value;
+    let fileName = '';
+    for (let i = filePath.length - 1; i >= 0; i--) {
+      if (filePath[i] === "\\") break;
+      fileName = filePath[i] + fileName;
+    }
+    btn.classList.add('active');
+    btn.lastElementChild.textContent = fileName;
+    input.classList.add('inactive');
+  }
+  removePhoto(btn,input){
+    input.value = '';
+    btn.parentElement.classList.remove('active');
+    btn.nextElementSibling.textContent = 'Add a photo';
+    input.classList.remove('inactive');
   }
 
   popupsCloseBtn(){
