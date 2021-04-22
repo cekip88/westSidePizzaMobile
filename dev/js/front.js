@@ -8,6 +8,7 @@ class Front extends _front{
     _.swipeScrollBar();
     _.popupsCloseBtn();
     _.addPhotoInputsHandlers();
+    _.showCategoryHandler();
   }
 
   swipeScrollBar(){
@@ -152,17 +153,30 @@ class Front extends _front{
     let btn = input.nextElementSibling;
     let filePath = input.value;
     let fileName = '';
+
     for (let i = filePath.length - 1; i >= 0; i--) {
       if (filePath[i] === "\\") break;
       fileName = filePath[i] + fileName;
     }
+    let img = document.createElement('img');
+    if (input.files && input.files[0]) {
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        img.setAttribute('src',e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+
     btn.classList.add('active');
-    btn.lastElementChild.textContent = fileName;
+    btn.append(img);
+    btn.querySelector('SPAN').textContent = fileName;
     input.classList.add('inactive');
   }
   removePhoto(btn,input){
     input.value = '';
-    btn.parentElement.classList.remove('active');
+    let parent = btn.parentElement;
+    parent.classList.remove('active');
+    parent.lastElementChild.remove();
     btn.nextElementSibling.textContent = 'Add a photo';
     input.classList.remove('inactive');
   }
@@ -175,6 +189,15 @@ class Front extends _front{
       item.addEventListener('click',function (){
         target.classList.remove('active')
       })
+    })
+  }
+
+  showCategoryHandler(){
+    const _ = this;
+    let btn = document.querySelector('.bottom-input');
+    if (btn) btn.addEventListener('click',function (){
+      let cat = document.querySelector('.category');
+      cat.classList.toggle('active');
     })
   }
 }

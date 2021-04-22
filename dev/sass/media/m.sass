@@ -92,6 +92,49 @@
 			background-color: $red
 			right: 1px
 
+.category
+	width: 100%
+	height: calc(100vh - 70px)
+	padding: 8px 10px 0
+	background: #F2F2F2
+	box-shadow: 0px -6px 8px -6px rgba(24, 39, 75, 0.12), 0px -8px 16px -6px rgba(24, 39, 75, 0.08)
+	border-radius: 4px
+	overflow: auto
+	position: fixed
+	top: 100vh
+	left: 0
+	z-index: 98
+	transition: .35s ease
+	&.active
+		top: 0
+	&-title
+		font-family: $f_bold
+		font-size: 18px
+		color: #5B5B5B
+	&-block
+		&.unanswered
+			.category-link
+				background-color: #F3F4FD
+		&.answered
+			.category-link
+				background-color: #E2F6E3
+	&-list
+		margin-top: 8px
+		margin-bottom: 28px
+		display: flex
+		flex-direction: column
+	&-item
+		margin-bottom: 16px
+		&:last-child
+			margin-bottom: 0
+	&-link
+		padding: 24px 10px
+		display: block
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08)
+		text-align: center
+		transition: .35s ease
+		&:active
+			box-shadow: none
 .bottom
 	&-block
 		+dfc
@@ -216,7 +259,7 @@
 			opacity: 1
 			visibility: visible
 	&-textarea
-		+wh(305px,168px)
+		+wh(305px,100px)
 		padding: 12px 16px
 		border: 1px solid transparent
 		border-radius: 10px
@@ -291,8 +334,18 @@
 					font-family: $f_bold
 					color: #EAEAEA
 				&.active
-					background-color: #41c341
-					img
+					background-color: #000
+					&>img
+						+wh(100%)
+						opacity: .5
+						object-fit: cover
+						position: absolute
+						top: 0
+						left: 0
+					button,span
+						position: relative
+						z-index: 1
+					button img
 						transform: rotate(45deg)
 .horizontal
 	width: 305px
